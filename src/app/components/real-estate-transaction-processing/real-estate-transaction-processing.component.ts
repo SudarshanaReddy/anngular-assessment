@@ -25,7 +25,7 @@ export class RealEstateTransactionProcessingComponent implements OnInit {
     console.log('inside ngOnInit');
     this.service.getList().subscribe(result => {
       if(result!=undefined) {
-        this.realEstateTrannsactionRecords = result.data;
+        this.realEstateTrannsactionRecords = result.data.slice(1);
         this.constructRecords(this.realEstateTrannsactionRecords);
       }
     })
