@@ -3,7 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RealEstateTransactionProcessingComponent } from './real-estate-transaction-processing/real-estate-transaction-processing.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RealEstateTransactionProcessingComponent } from './components/real-estate-transaction-processing/real-estate-transaction-processing.component';
+import { RealEstateTransactionProcessingService } from './services/real-estate-transaction-processing.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,9 +15,11 @@ import { RealEstateTransactionProcessingComponent } from './real-estate-transact
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [RealEstateTransactionProcessingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,43 @@
+<div>
+    <h1>Angular 13 HTML Table Example</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Street</th>
+          <th>City</th>
+          <th>Zip</th>
+          <th>State</th>
+          <th>Beds</th>
+          <th>Baths</th>
+          <th>Sqft</th>
+          <th>Type</th>
+          <th>SaleDate</th>
+          <th>Price</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of finalTransactionRecords">
+          <td>{{item.id}}</td>  
+          <td><input type="text" [(ngModel)]=" item.realEstateTransactionRecord.street" readonly></td>
+          <td><input type="text" [(ngModel)]=" item.realEstateTransactionRecord.city" 
+            (ngModelChange)="captureChange(item.id, 1, $event)"></td> 
+          <td><input type="text" [(ngModel)]=" item.realEstateTransactionRecord.zip" (ngModelChange)="captureChange(item.id, 2, $event)"></td>
+          <td><input type="text" [(ngModel)]=" item.realEstateTransactionRecord.state" readonly></td>
+          <td><input type="text" [(ngModel)]=" item.realEstateTransactionRecord.beds" readonly></td>
+          <td><input type="text" [(ngModel)]=" item.realEstateTransactionRecord.baths" readonly></td>
+          <td><input type="text" [(ngModel)]=" item.realEstateTransactionRecord.sqft" readonly></td>
+          <td><input type="text" [(ngModel)]=" item.realEstateTransactionRecord.type" readonly></td>
+          <td><input type="text" [(ngModel)]=" item.realEstateTransactionRecord.saleDate" readonly></td>
+          <td><input type="text" [(ngModel)]=" item.realEstateTransactionRecord.price" (ngModelChange)="captureChange(item.id, 9, $event)"></td>
+          <td><input type="text" [(ngModel)]=" item.realEstateTransactionRecord.latitude" readonly></td>
+          <td><input type="text" [(ngModel)]=" item.realEstateTransactionRecord.longitude" readonly></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="center">
+        <button (click)="update()">UPDATE</button>
+      </div>
+  </div>
